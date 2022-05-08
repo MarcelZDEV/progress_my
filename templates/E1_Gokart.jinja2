@@ -1,0 +1,22 @@
+{% extends 'home.jinja2' %}
+{% block title %}Tracks{% endblock %}
+{% block content %}
+    <div class="jumbotron">
+        <div class="container text-center">
+            <h1>E1 Gokart</h1>
+        </div>
+    </div>
+    <div class="container-fluid bg-3 text-center">
+        <div class="row">
+            <div class="col-sm-4">
+                <a href="#">Best time: {{ best_time }}</a>
+            </div>
+            <div class="col-sm-4">
+                <a href="#">Average time: {{ average }}</a>
+            </div>
+            <div class="col-sm-4">
+                <a href="#">Target time: 56.500</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

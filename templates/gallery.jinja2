@@ -1,0 +1,31 @@
+{% extends 'home.jinja2' %}
+{% block title %}Tracks{% endblock %}
+{% block content %}
+    <div class="jumbotron">
+        <div class="container text-center">
+            <h1>Gallery</h1>
+        </div>
+    </div>
+    <div class="container-fluid bg-3 text-center">
+        <a onclick="one()" class="">1</a>
+        <a onclick="two()" class="">2</a>
+        <a onclick="three()" class="">3</a>
+    </div>
+    <div class="row">
+        <div class="column">
+            <img src="../static/images/porsche.png" alt="porsche" width="100%">
+            <img src="../static/images/thumb-350-681889.jpg" alt="porsche" width="100%">
+            <img src="../static/images/background_os.jpg" alt="background" width="100%">
+        </div>
+        <div class="column">
+            <img src="../static/images/background_os.jpg" alt="background" width="100%">
+            <img src="../static/images/porsche.png" alt="porsche" width="100%">
+            <img src="../static/images/thumb-350-681889.jpg" alt="porsche" width="100%">
+        </div>
+        <div class="column">
+            <img src="../static/images/background_os.jpg" alt="background" width="100%">
+            <img src="../static/images/porsche.png" alt="porsche" width="100%">
+            <img src="../static/images/thumb-350-681889.jpg" alt="porsche" width="100%">
+        </div>
+    </div>
+{% endblock %}
