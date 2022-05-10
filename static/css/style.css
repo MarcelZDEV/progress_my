@@ -13,3 +13,7 @@
   flex-wrap: wrap;
   padding: 0 4px;
 }
+
+* {
+  border: none;
+}
