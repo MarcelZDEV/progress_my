@@ -29,9 +29,42 @@ def e1_gokart():
     return render_template('E1_Gokart.jinja2', average=average, best_time=best_time)
 
 
+@app.route('/poznan-kart-track')
+def poznan_kart_track():
+    sum_times = 0
+    get_len_poznan_kart_track = len(poznan_kart_track_data)
+
+    for i in range(0, get_len_poznan_kart_track):
+        sum_times = sum_times + poznan_kart_track_data[i]
+
+    average = round(sum_times / get_len_poznan_kart_track, 3)
+
+    best_time = min(bahrain_data)
+    return render_template('Poznań_kart_track.jinja2', average=average, best_time=best_time)
+
+
+@app.route('/bahrain')
+def bahrain():
+    sum_times = 0
+    get_len_bahrain = len(bahrain_data)
+
+    for i in range(0, get_len_bahrain):
+        sum_times = sum_times + bahrain_data[i]
+
+    average = round(sum_times / get_len_bahrain, 3)
+
+    best_time = min(bahrain_data)
+    return render_template('Bahrain.jinja2', average=average, best_time=best_time)
+
+
 @app.route('/gallery')
 def gallery():
     return render_template('gallery.jinja2')
+
+
+@app.route('/about')
+def about():
+    return render_template('about.jinja2')
 
 
 if __name__ == '__main__':
