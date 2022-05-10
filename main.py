@@ -22,7 +22,7 @@ def e1_gokart():
     for i in range(0, get_len_e1_gokart):
         sum_times = sum_times + e1_gokart_data[i]
 
-    average = sum_times / get_len_e1_gokart
+    average = round(sum_times / get_len_e1_gokart, 3)
 
     best_time = min(e1_gokart_data)
 
