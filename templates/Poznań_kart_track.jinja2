@@ -10,18 +10,30 @@
         <p class="text-primary navbar-brand">On track</p><br>
         <div class="row">
             <div class="col-sm-4">
-                <p class="text-primary">Best time: {{ best_time }}</p>
+                <p class="text-primary">Best time: {{ best_time_ontrack }}</p>
             </div>
             <div class="col-sm-4">
-                <p class="text-primary">Average time: {{ average }}</p>
+                <p class="text-primary">Average time: {{ average_ontrack }}</p>
             </div>
             <div class="col-sm-4">
-                <p class="text-primary">Target time: ...</p>
+                <p class="text-primary">Target time: {{ target }}</p>
             </div>
         </div>
         <br>
         <hr>
-        <p class="text-primary navbar-brand">Esport</p><br>
+        <p class="text-primary navbar-brand">Esport - {{ vehicle }}</p><br>
+        <form method="POST">
+            <div class="input-group mb-3 d-flex justify-content-end">
+                <div class="input-group-prepend">
+                    <select name="cars" class="custom-select text-primary border border-0">
+                        <option value="Kart 125">Kart 125</option>
+                        <option value="Kart 50">Kart 50</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn text-primary">Show</button>
+            </div>
+        </form>
+        <br>
         <div class="row">
             <div class="col-sm-4">
                 <p class="text-primary">Best time: {{ best_time }}</p>
@@ -30,7 +42,7 @@
                 <p class="text-primary">Average time: {{ average }}</p>
             </div>
             <div class="col-sm-4">
-                <p class="text-primary">Target time: ...</p>
+                <p class="text-primary">Target time: {{ target }}</p>
             </div>
         </div>
     </div>

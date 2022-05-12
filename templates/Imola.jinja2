@@ -1,0 +1,23 @@
+{% extends 'home.jinja2' %}
+{% block title %}Imola{% endblock %}
+{% block content %}
+    <div class="jumbotron">
+        <div class="container text-center">
+            <h1>Imola</h1>
+        </div>
+    </div>
+    <div class="container-fluid bg-3 text-center">
+        <p class="text-primary navbar-brand">On track</p><br>
+        <div class="row">
+            <div class="col-sm-4">
+                <p class="text-primary">Best time: {{ best_time }}</p>
+            </div>
+            <div class="col-sm-4">
+                <p class="text-primary">Average time: {{ average }}</p>
+            </div>
+            <div class="col-sm-4">
+                <p class="text-primary">Target time: ...</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
