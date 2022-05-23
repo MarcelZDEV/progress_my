@@ -18,13 +18,18 @@ def tracks():
 
 @app.route('/E1-Gokart')
 def e1_gokart():
-    get_len_e1_gokart = 1
-    vehicle_input_e1_gokart = []
+    # global variables for this function
 
+    get_len_e1_gokart = 1
+    vehicle_input_e1_gokart = e1_gokart_data
+
+    # sum all numbers from list
     sum_numbers_poznan_kart_track = sum(vehicle_input_e1_gokart)
 
+    # average from all numbers in list
     average_e1_gokart = round(sum_numbers_poznan_kart_track / get_len_e1_gokart, 3)
 
+    # get the lowest number to know what is the best time
     best_time_e1_gokart = min(vehicle_input_e1_gokart)
 
     return render_template('E1_Gokart.jinja2', average=average_e1_gokart, best_time=best_time_e1_gokart)
@@ -122,19 +127,44 @@ def bahrain():
     return render_template('Bahrain.jinja2', average=average_bahrain, best_time=best_time_bahrain, vehicle=vehicle_bahrain, target=target_time)
 
 
-@app.route('/imola')
+@app.route('/imola', methods=['POST', 'GET'])
 def imola():
-    global get_len, vehicle_input, average, best_time
-    sum_times = 0
-    get_len_imola = len(imola_data_f1_2021)
+    # global variables for this function
 
-    for i in range(0, get_len_imola):
-        sum_times = sum_times + imola_data_f1_2021[i]
+    # variables for e sport
+    average_imola = 0
+    best_time_imola = 0
+    vehicle_input_imola = []
+    vehicle_imola = ''
+    target_time = 0
+    get_len_imola = 1
 
-    average = round(sum_times / get_len_imola, 3)
+    # check do request is post
+    if request.method == 'POST':
+        # get vehicle from dropdown
+        vehicle_imola = request.form['cars']
 
-    best_time = min(imola_data_f1_2021)
-    return render_template('Imola.jinja2', average=average, best_time=best_time)
+        if vehicle_imola == 'F1 2021 formula':
+            # set values for variables
+            vehicle_input_imola = imola_data_f1_2021
+            get_len_imola = len(imola_data_f1_2021)
+
+        # times e-sport
+
+        # sum all numbers from list
+        sum_numbers_poznan_kart_track = sum(vehicle_input_imola)
+
+        # average from all numbers in list
+        average_poznan_kart_track = round(sum_numbers_poznan_kart_track / get_len_imola, 3)
+
+        # get the lowest number to know what is the best time
+        best_time_poznan_kart_track = min(vehicle_input_imola)
+
+        # target time e-sport
+        target_time = best_time_poznan_kart_track - target_time_delta
+
+    return render_template('Imola.jinja2', average=average_imola,
+                           best_time=best_time_imola, vehicle=vehicle_imola, target=target_time,)
 
 
 @app.route('/singapore', methods=['POST', 'GET'])

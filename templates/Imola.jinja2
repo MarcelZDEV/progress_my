@@ -7,7 +7,18 @@
         </div>
     </div>
     <div class="container-fluid bg-3 text-center">
-        <p class="text-primary navbar-brand">On track</p><br>
+        <p class="text-primary navbar-brand">Esport - {{ vehicle }}</p><br>
+        <form method="POST">
+            <div class="input-group mb-3 d-flex justify-content-end">
+                <div class="input-group-prepend">
+                    <select name="cars" class="custom-select text-primary border border-0">
+                        <option value="F1 2021 formula">F1 2021 formula</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn text-primary">Show</button>
+            </div>
+        </form>
+        <br>
         <div class="row">
             <div class="col-sm-4">
                 <p class="text-primary">Best time: {{ best_time }}</p>
@@ -16,7 +27,7 @@
                 <p class="text-primary">Average time: {{ average }}</p>
             </div>
             <div class="col-sm-4">
-                <p class="text-primary">Target time: ...</p>
+                <p class="text-primary">Target time: {{ target }}</p>
             </div>
         </div>
     </div>
