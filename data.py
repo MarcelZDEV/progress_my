@@ -4,7 +4,7 @@ poznan_kart_kart_track_data = [1]
 poznan_kart_track_data_kart_50 = [1]
 poznan_kart_track_data_kart_125 = [1]
 
-bahrain_data_f1_2021 = [1]
+bahrain_data_f1_2021 = [76.062, 76.3302, 76.0866, 76.5096]
 
 imola_data_f1_2021 = [1]
 

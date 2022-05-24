@@ -3,7 +3,7 @@ from data import *
 import datetime
 
 app = Flask(__name__, static_url_path='/static')
-target_time_delta = datetime.timedelta(seconds=0.5)
+target_time_delta = 0.005
 
 
 @app.route('/')
@@ -119,11 +119,13 @@ def bahrain():
 
         sum_numbers_bahrain = sum(vehicle_input_bahrain)
 
-        average_bahrain = round(sum_numbers_bahrain / get_len_bahrain, 3)
+        average_bahrain = sum_numbers_bahrain / get_len_bahrain
+        average_bahrain = round(average_bahrain / 60, 3)
 
         best_time_bahrain = min(vehicle_input_bahrain)
+        best_time_bahrain = round(best_time_bahrain / 60, 3)
 
-        target_time = best_time_bahrain - target_time_delta
+        target_time = round(best_time_bahrain - target_time_delta, 3)
     return render_template('Bahrain.jinja2', average=average_bahrain, best_time=best_time_bahrain, vehicle=vehicle_bahrain, target=target_time)
 
 
