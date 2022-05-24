@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "builds": [
+      {
+          "src": "*.py",
+          "use": "@MarcelZDEV/progress_my"
+      }
+  ],
+  "routes": [
+      {
+          "src": "(.*)",
+          "dest": "main.py"
+      }
+  ]
+}
