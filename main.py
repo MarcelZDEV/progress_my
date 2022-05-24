@@ -1,9 +1,9 @@
 from flask import Flask, render_template, url_for, request
 from data import *
-import global_var
+import datetime
 
 app = Flask(__name__, static_url_path='/static')
-target_time_delta = 0.5
+target_time_delta = datetime.timedelta(seconds=0.5)
 
 
 @app.route('/')
@@ -211,9 +211,12 @@ def nurburgring():
 
         sum_numbers_nurburgring = sum(vehicle_input_nurburgring)
 
-        average_nurburgring = round(sum_numbers_nurburgring / get_len_nurburgring, 3)
+        average_nurburgring = round(sum_numbers_nurburgring / get_len_nurburgring)
+        average_nurburgring = datetime.timedelta(seconds=average_nurburgring)
 
         best_time_nurburgring = min(vehicle_input_nurburgring)
+        best_time_nurburgring = round(best_time_nurburgring)
+        best_time_nurburgring = datetime.timedelta(seconds=best_time_nurburgring)
 
         target_time = best_time_nurburgring - target_time_delta
     return render_template('Nürburgring.jinja2', average=average_nurburgring,
