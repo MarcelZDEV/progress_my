@@ -3,7 +3,7 @@
   "builds": [
       {
           "src": "*.py",
-          "use": "@MarcelZDEV/progress_my"
+          "use": "@vercel/python"
       }
   ],
   "routes": [

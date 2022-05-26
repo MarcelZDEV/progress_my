@@ -8,12 +8,12 @@ target_time_delta = 0.005
 
 @app.route('/')
 def home():
-    return render_template('home.jinja2')
+    return render_template('templates/home.jinja2')
 
 
 @app.route('/tracks')
 def tracks():
-    return render_template('tracks.jinja2')
+    return render_template('templates/tracks.jinja2')
 
 
 @app.route('/E1-Gokart')
@@ -32,7 +32,7 @@ def e1_gokart():
     # get the lowest number to know what is the best time
     best_time_e1_gokart = min(vehicle_input_e1_gokart)
 
-    return render_template('E1_Gokart.jinja2', average=average_e1_gokart, best_time=best_time_e1_gokart)
+    return render_template('templates/E1_Gokart.jinja2', average=average_e1_gokart, best_time=best_time_e1_gokart)
 
 
 @app.route('/poznan-kart-track', methods=['POST', 'GET'])
@@ -97,7 +97,7 @@ def poznan_kart_track():
         # target time on track
         target_time_ontrack = best_time_poznan_kart_track_ontrack = target_time_delta
 
-    return render_template('Poznań_kart_track.jinja2', average=average_poznan_kart_track,
+    return render_template('templates/Poznań_kart_track.jinja2', average=average_poznan_kart_track,
                            best_time=best_time_poznan_kart_track, vehicle=vehicle_poznan_kart_track, target=target_time, average_ontrack=average_poznan_kart_track_ontrack, best_time_ontrack=best_time_poznan_kart_track_ontrack, target_time_ontrack=target_time_ontrack)
 
 
@@ -126,7 +126,7 @@ def bahrain():
         best_time_bahrain = round(best_time_bahrain / 60, 3)
 
         target_time = round(best_time_bahrain - target_time_delta, 3)
-    return render_template('Bahrain.jinja2', average=average_bahrain, best_time=best_time_bahrain, vehicle=vehicle_bahrain, target=target_time)
+    return render_template('templates/Bahrain.jinja2', average=average_bahrain, best_time=best_time_bahrain, vehicle=vehicle_bahrain, target=target_time)
 
 
 @app.route('/imola', methods=['POST', 'GET'])
@@ -165,8 +165,8 @@ def imola():
         # target time e-sport
         target_time = best_time_poznan_kart_track - target_time_delta
 
-    return render_template('Imola.jinja2', average=average_imola,
-                           best_time=best_time_imola, vehicle=vehicle_imola, target=target_time,)
+    return render_template('templates/Imola.jinja2', average=average_imola,
+                           best_time=best_time_imola, vehicle=vehicle_imola, target=target_time, )
 
 
 @app.route('/singapore', methods=['POST', 'GET'])
@@ -192,7 +192,7 @@ def singapore():
         best_time_singapore = min(vehicle_input_singapore)
 
         target_time = best_time_singapore - target_time_delta
-    return render_template('Singapore.jinja2', average=average_singapore, best_time=best_time_singapore, target=target_time, vehicle=vehicle_singapore)
+    return render_template('templates/Singapore.jinja2', average=average_singapore, best_time=best_time_singapore, target=target_time, vehicle=vehicle_singapore)
 
 
 @app.route('/nurburgring', methods=['POST', 'GET'])
@@ -221,18 +221,18 @@ def nurburgring():
         best_time_nurburgring = datetime.timedelta(seconds=best_time_nurburgring)
 
         target_time = best_time_nurburgring - target_time_delta
-    return render_template('Nürburgring.jinja2', average=average_nurburgring,
+    return render_template('templates/Nürburgring.jinja2', average=average_nurburgring,
                            best_time=best_time_nurburgring, vehicle=vehicle_nurburgring, target=target_time)
 
 
 @app.route('/gallery')
 def gallery():
-    return render_template('gallery.jinja2')
+    return render_template('templates/gallery.jinja2')
 
 
 @app.route('/about')
 def about():
-    return render_template('about.jinja2')
+    return render_template('templates/about.jinja2')
 
 
 if __name__ == '__main__':
